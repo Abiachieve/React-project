@@ -98,6 +98,9 @@ th {
 tr:hover {
   background-color: #a19f9f;
 }
+.invoice-number {
+  color: blue;
+}
 
   </style>
 
@@ -111,7 +114,7 @@ tr:hover {
       <!-- Sidebar -->
       <div class="col-lg-3 col-md-4 bg-light text-dark">
         <div class="p-4">
-          <h3 class="text-center">Medico Sales</h3>
+          <h3 class="text-center" style="color: blue;">Medico Sales</h3>
         </div>
         
         <ul class="nav flex-column">
@@ -119,7 +122,7 @@ tr:hover {
           <li class="nav-item">
             <a class="nav-link text-dark" href="#">
             <img src="./Images/element-3.png" alt="">
-           Dashboard</a>
+           <span style="color: blue">Dashboard</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-dark" href="#">
@@ -177,7 +180,8 @@ tr:hover {
             <table>
               <thead>
                 <tr>
-                  <th>Invoice</th>
+                 
+                  <th> <input type="checkbox" id="myCheckbox" name="myCheckbox">Invoice</th>
                   <th>Customer Name</th>
                   <th>Date</th>
                   <th>Paid Amount</th>
@@ -197,7 +201,7 @@ tr:hover {
     </div>
   </div>
 <script>
-  const tableBody = document.getElementById('invoice-data');
+  const tableBody = document.getElementById ('invoice-data');
 
 
 function getInvoiceData() {
@@ -302,7 +306,7 @@ const invoiceData = getInvoiceData();
 invoiceData.forEach(invoice => {
   const row = document.createElement('tr');
   row.innerHTML = `
-    <td>${invoice.invoiceNumber}</td>
+  <td> <input type="checkbox" id="myCheckbox" name="myCheckbox">&nbsp;<span style="color: blue;">${invoice.invoiceNumber}</span></td>
     <td>${invoice.customerName}</td>
     <td>${invoice.date}</td>
     <td>${invoice.paidAmount}</td>
